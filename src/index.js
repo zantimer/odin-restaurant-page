@@ -2,8 +2,8 @@ import './style.css';
 import Logo from './logo.png';
 
 
-const divMaker = (name,text='', parent = '.content') =>{
-    const div = document.createElement('div');
+const elementMaker = (type,name,text='', parent = '.content') =>{
+    const div = document.createElement(`${type}`);
     const mainDiv = document.querySelector(`${parent}`);
     
     div.classList.add(name);
@@ -17,7 +17,7 @@ const divMaker = (name,text='', parent = '.content') =>{
 
 
 //main logo
-const logo = divMaker('logo');
+const logo = elementMaker('div', 'logo');
 const myLogo = new Image();
 myLogo.classList.add('image');
 
@@ -26,4 +26,13 @@ myLogo.draggable =false;
 
 logo.div.appendChild(myLogo);
 
-const sideBar = divMaker('sidebar', 'sidebar');
+//navbar
+const sideBar = elementMaker('div','sidebar');
+//navbtns
+const homeBtn = elementMaker('button', 'buttons', 'Home', '.sidebar');
+const menuBtn = elementMaker('button', 'buttons', 'Menu', '.sidebar');
+const aboutBtn = elementMaker('button', 'buttons', 'About Us', '.sidebar');
+const contactBtn = elementMaker('button', 'buttons', 'Contact', '.sidebar');
+
+//content area
+const contentArea = elementMaker('div','content-area', "lorem ipsum \n lorem ipsum not");
