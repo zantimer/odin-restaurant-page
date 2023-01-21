@@ -1,0 +1,20 @@
+.content{
+    background-color: black;
+    width: 100px;
+    height: 200px;
+}
+.header{
+    background-color: white;
+    width: 20%;
+    height: 20%;
+}
+.logo{
+    background-color: red;
+    width: 20%;
+    height: 20%;
+}
+.writeup{
+    background-color: blue;
+    width: 20%;
+    height: 20%;
+}
