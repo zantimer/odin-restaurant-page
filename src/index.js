@@ -1,19 +1,7 @@
 import './style.css';
 import Logo from './logo.png';
-
-
-const elementMaker = (type,name,text='', parent = '.content') =>{
-    const div = document.createElement(`${type}`);
-    const mainDiv = document.querySelector(`${parent}`);
-    
-    div.classList.add(name);
-    div.textContent = `${text}`;
-    
-    mainDiv.appendChild(div);
-
-    return {div}
-}
-
+import Homepage from './homepage.js';
+import {elementMaker} from './helper.js';
 
 
 //main logo
