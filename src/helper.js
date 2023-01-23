@@ -13,19 +13,20 @@ function elementMaker (type,name,text='', parent = '.content')
 function pageBuilder(tab = function(){console.log('need to pass in the tab')})
 {
     const mainDiv = document.querySelector('.content');
-    if (mainDiv.childElementCount.valueOf() != 0)
-    {
+    
         console.log('pagebuilder in helper');
-    mainDiv.childNodes.forEach((node)=>{
-        node.remove();
-    });
-    tab();
-    }
-
-    else
+    for(let i = 0; i<mainDiv.childElementCount; i++)
     {
+        if (mainDiv.childElementCount == 0)
+        {
+            break;
+        }
+        else
+        {
+            mainDiv.children.item(`${i}`).remove();
+        }
+    }
     tab();
-    } 
 }
 
 
