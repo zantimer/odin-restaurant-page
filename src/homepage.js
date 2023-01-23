@@ -1,6 +1,7 @@
 import {elementMaker} from './helper.js';
 import Logo from './images/logo.png';
 
+
 function Homepage()
 {
     const mainDiv = document.querySelector('.content');
@@ -26,6 +27,15 @@ if(document.querySelector('.sidebar') == null)
     const contactBtn = elementMaker('button', 'contact-btn', 'Contact', '.sidebar');
     const contentArea = elementMaker('div','content-area', "lorem ipsum \n lorem ipsum not");
     return {contentArea, homeBtn, menuBtn, aboutBtn, contactBtn, sideBar}
+}
+else
+{
+    const content = document.querySelector('.content-area');
+    while (content.firstChild)
+    {
+        console.log(content.lastChild);
+        content.removeChild(content.lastChild);
+    }
 }
 }
 

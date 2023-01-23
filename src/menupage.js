@@ -1,25 +1,29 @@
 import {elementMaker} from './helper.js';
+import menu1 from './images/menu1.jpg';
+import wings from './images/wings.JPG';
+import fruitcups from './images/fruitcups.JPG';
+import platter from './images/platter.JPG';
+import tree from './images/tree.JPG';
 
-function importAll(require) {
-    let images = {};
-    require.keys().map((item, index) => {
-        images[item.replace('./', '')] = r(item);
-        return images;
-    })
-}
-
+let i = 0;
 
 const menupage = () =>{
-    //import all images
-    const images = importAll(require.context('./images', false, /\.(jpe?g|svg|gif)$/));
-    //main functionality
+    
     const image = document.querySelector('.image');
     const menuArea = document.querySelector('.content-area');
 
-    images.forEach((item)=>{
-        const itemDiv = elementMaker('div', `${item}`, '', menuArea);
-        const itemImg = elementMaker('img', `icon-${item}`, '', itemDiv);
+    const imageArray = [menu1, wings, fruitcups, platter, tree];
+    
+    imageArray.forEach((item) =>{
+        const itemDiv = elementMaker('div', `menu${i}`, '', '.content-area')
+        const itemIcon = elementMaker('img', `image`, '', `.menu${i}`);
+        i++;
 
-        itemImg.div.src = `${item}`;
-    })
+        itemDiv.div.classList.add('menu-group');
+
+        itemIcon.div.src = item;
+    });
+    i = 0;
 }
+
+export {menupage}

@@ -10,24 +10,5 @@ function elementMaker (type,name,text='', parent = '.content')
 
     return {div};
 }
-function pageBuilder(tab = function(){console.log('need to pass in the tab')})
-{
-    const mainDiv = document.querySelector('.content');
-    
-        console.log('pagebuilder in helper');
-    for(let i = 0; i<mainDiv.childElementCount; i++)
-    {
-        if (mainDiv.childElementCount == 0)
-        {
-            break;
-        }
-        else
-        {
-            mainDiv.children.item(`${i}`).remove();
-        }
-    }
-    tab();
-}
 
-
-export {elementMaker, pageBuilder};
+export {elementMaker};

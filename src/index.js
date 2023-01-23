@@ -1,6 +1,7 @@
 import './style.css';
 import {Homepage} from './homepage.js';
-import {elementMaker, pageBuilder} from './helper.js';
+import {menupage} from './menupage.js';
+import {elementMaker} from './helper.js';
 
 
 window.addEventListener('load', () => {
@@ -8,6 +9,10 @@ window.addEventListener('load', () => {
 
     home.homeBtn.div.addEventListener('click', ()=>{
         Homepage();
+    })
+
+    home.menuBtn.div.addEventListener('click', () =>{
+        menupage();
     })
 });
 
