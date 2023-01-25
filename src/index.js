@@ -5,14 +5,15 @@ import {elementMaker} from './helper.js';
 
 
 window.addEventListener('load', () => {
-    const home = Homepage();
+    const home = (() => Homepage.mainElements())();
+    const refresh = () => Homepage.pageRefresh();
 
     home.homeBtn.div.addEventListener('click', ()=>{
-        Homepage();
+        refresh();
     })
 
     home.menuBtn.div.addEventListener('click', () =>{
-        menupage();
+        menupage.menuMaker();
     })
 });
 

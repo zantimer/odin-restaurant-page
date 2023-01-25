@@ -2,13 +2,16 @@ import {elementMaker} from './helper.js';
 import Logo from './images/logo.png';
 
 
-function Homepage()
+const Homepage = (() =>
 {
     const mainDiv = document.querySelector('.content');
     
     console.log('homepage called and check success');
     //main logo
-if(document.querySelector('.sidebar') == null)
+
+const mainElements = ()=>
+{
+    if(document.querySelector('.sidebar') == null)
 {
     const logo = elementMaker('div', 'logo');
     const myLogo = new Image();
@@ -25,10 +28,11 @@ if(document.querySelector('.sidebar') == null)
     const menuBtn = elementMaker('button', 'menu-btn', 'Menu', '.sidebar');
     const aboutBtn = elementMaker('button', 'about-btn', 'About Us', '.sidebar');
     const contactBtn = elementMaker('button', 'contact-btn', 'Contact', '.sidebar');
-    const contentArea = elementMaker('div','content-area', "lorem ipsum \n lorem ipsum not");
+    const contentArea = elementMaker('div','content-area', "");
     return {contentArea, homeBtn, menuBtn, aboutBtn, contactBtn, sideBar}
 }
-else
+}
+const pageRefresh = () =>
 {
     const content = document.querySelector('.content-area');
     while (content.firstChild)
@@ -37,6 +41,9 @@ else
         content.removeChild(content.lastChild);
     }
 }
-}
+return {pageRefresh, mainElements}
+})();
+
+
 
 export {Homepage}
